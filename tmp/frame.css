@@ -1,0 +1,33 @@
+body {font-family: serif;}
+
+a:link {color: navy;}
+a:visited {color: gray;}
+a:hover {color: red;}
+a:active {color: yellow;}
+
+
+code, pre, tt, span.input {font-family: monospace;}
+p.signature {font-family: cursive;}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: serif;
+	font-weight: lighter;
+	color: darkred;
+	text-indent: 5%;
+	text-align: center;
+ 	text-shadow: gray 4px 2px 5px; 
+}
+
+p.red:first-letter {
+	color: red;
+	font-size: 200%;
+}
+p {
+	text-indent: 3em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+button {
+	font: caption;
+}

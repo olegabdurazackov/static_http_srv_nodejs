@@ -1,0 +1,18 @@
+
+@media screen and (max-device-width:480px){
+	.header{
+		grid-column:span 12;
+	}
+	.panel{
+		grid-column:span 0;
+	}
+	.content{
+		grid-column:span 11;
+	}
+	.menu{
+		grid-column:span 1;
+	}
+	.footer{
+		grid-column:span 12;
+	}
+}

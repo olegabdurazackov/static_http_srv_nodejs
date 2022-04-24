@@ -1,0 +1,57 @@
+.seealso {
+	background-color: #ffc;	
+	color: #884; 
+}
+
+#mts{
+	background:url(mchs.jpg) 50% 0 no-repeat fixed;
+	color: gray;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+#mts2{
+	background:url(mch2s.jpg) 50% 0 no-repeat fixed;
+	color: gray;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+#sro{
+	background:url(sro1.jpg) 50% 0 no-repeat fixed;
+	color: blue;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+#sro2{
+	background:url(sro2.jpg) 50% 0 no-repeat fixed;
+	color: blue;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+#lab{
+	background:url(elab1.jpg) 50% 0 no-repeat fixed;
+	color: green;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+#lab2{
+	background:url(elab.jpg) 50% 0 no-repeat fixed;
+	color: green;
+	width: 1200px;
+	height: 1500px; 
+	margin: 0 auto;
+	padding: 0;
+}
+.none a {
+	text-decoration: none;
+	color: #884;
+}

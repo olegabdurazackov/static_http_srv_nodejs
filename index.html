@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Стройэнергосязь</title>
+<link href="src/base.css" type="text/css" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+	color: white;
+	background-color: #094f4f;
+	font-family: serif;
+}
+
+.fade {
+	
+}
+
+.sopr {
+	border-radius: 1em;
+}
+.sopr_form {
+	border-radius: 0.5em;
+}
+menu {
+	font: menu;
+}
+button {
+	font: caption;
+}
+message-box {
+	font: message-box;
+	} 
+.go_nav{
+	width: 30%;
+}
+	
+.wrapper{
+	display:grid;
+	grid-template-columns:repeat(12,1fr);
+	grid-template-rows:40px 100px 40ps;
+}
+.header{
+	grid-column:span 12;
+}
+.panel{
+	grid-column:span 1;
+}
+.content{
+	grid-column:span 10;
+}
+.menu{
+	grid-column:span 1;
+}
+.footer{
+	grid-column:span 12;
+}
+
+@media screen and (max-device-width:480px){
+	.header{
+		grid-column:span 12;
+	}
+	.panel{
+		grid-column:span 0;
+	}
+	.content{
+		grid-column:span 11;
+	}
+	.menu{
+		grid-column:span 1;
+	}
+	.footer{
+		grid-column:span 12;
+	}
+}
+
+.griline{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,
+			 minmax(150px, 1fr));
+	grid-gap: 2vw;
+}
+.grilineform{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,
+			 minmax(200px, 1fr));
+	grid-gap: 2vw;
+}
+
+/*#griline > div {
+	font-size: 2vw;
+	padding: .5em;
+	background-color: sky;
+	text-align: center;
+}*/
+
+.scrolled{
+	overflow: scroll;
+}
+
+.daun{
+	cursor: pointer;
+}
+
+.andere{
+	cursor: pointer; <!-- crosshair;progress; -->
+}
+
+img {
+	border-radius: 8px;
+	transition: all 1s easi 0s;
+}
+
+img:hover {
+	transform: scale(1.7); 
+
+}
+
+
+</style>
+
+</head>
+<body onload="start();">
+<div id="wrapper" class="wrapper">
+	<div class="header">
+		ПРЕДЛОЖЕНИЯ
+
+		<div class="griline">
+			<div id="shrm" title="Предложения для предприятий" class="andere">
+				<details><summary>Организациям</summary>
+					4 предложения<br>
+					<img id="h_1_1" src="images/izm.jpg" width="70" height="70"
+					title="Испытания электрооборудования"
+					onclick="electro(0);" 
+					> 
+					<img  src="images/moln.jpg" width="70" height="70"
+					title="Заземление и молниезащита"
+					onclick="electro(2);" 
+					> 
+					<img  src="images/shlag.jpg" width="70" height="70" title="Системы контроля доступа"
+					class="daun"
+					onclick="slab(0);" 
+					> 
+					<img  src="images/vid.jpg" width="70" height="70"title="Системы видеонаблюдения"
+					onclick="slab(1)"
+					 > 
+					<p></p>
+				</details>
+			</div>
+			<div title="Предложения для обычных людей" class="andere">
+				<details><summary>Гражданам</summary>
+					4 предложения<br>
+					<img id="h_2_1" src="img/c.jpg" width="70" height="70"
+					title="Солнечные электростанции для отдыха"
+					onclick="electro(3);" 
+					> 
+					<img id="h_2_2" src="img/hel2.jpg" width="70" height="70"
+					title="Солнечные электростанции для охотников"
+					onclick="electro(4);" 
+					 > 
+					<img id="h_2_3" src="images/izm2.jpg" width="70" height="70"
+					title="Испытания электропроводки"
+					onclick="electro(0);" 
+					> 
+					<img  src="images/moln.jpg" width="70" height="70"
+					title="Заземление и молниезащита"
+					onclick="electro(2);" 
+					> 
+					<p></p>
+				</details>
+			</div>
+			<div title="Предложения по электрическим сетям " class="andere">
+				<details><summary>Электро</summary>
+					4 предложения<br>
+					<img id="h_3_1" src="images/izm.jpg" width="70" height="70"
+					title="Испытания"
+					onclick="electro(0);" 
+					> 
+					<img id="h_3_2" src="images/sil.jpg" width="70" height="70"
+					title="Силовые сети"
+					onclick="electro(1);" 
+					 > 
+					<img id="h_3_3" src="images/moln.jpg" width="70" height="70"
+					title="Заземление и молниезащита"
+					onclick="electro(2);" 
+					> 
+					<img id="h_3_4" src="img/c.jpg" width="70" height="70" 
+					title="Солнечные электростанции"
+					onclick="electro(3);" 
+					> 
+					<p></p>
+				</details>
+			</div>	
+			<div title="Предложения по слаботочным сетям " class="andere ">
+				<details><summary>Слаботочные</summary>
+					4 предложения<br>
+					<img id="h_4_1" src="images/shlag.jpg" width="70" height="70" title="Системы контроля доступа"
+					class="daun"
+					onclick="slab(0);" 
+					> 
+					<img id="h_4_2" src="images/vid.jpg" width="70" height="70"title="Системы видеонаблюдения"
+					onclick="slab(1)"
+					 > 
+					<img id="h_4_3" src="images/pog.png" width="70" height="70" title="Противопожарные системы"
+					onclick="slab(2)" 
+					> 
+					<img id="h_4_4" src="images/wols.jpg" width="70" height="70" title="Волконно-оптические системы -ВОЛС"
+					onclick="slab(3)"
+					> 
+				</details>
+			</div>
+			<div title="Предложения по IT услугам " class="andere">
+				<details><summary>Hi-teh</summary>
+					4 предложения<br>
+					<img id="h_5_1" src="img/site.png" width="70" height="70"
+					title="Создание сайтов"
+					onclick="" 
+					> 
+					<img id="h_5_2" src="none" width="70" height="70"
+					title="Создание клиент-серверной системы на  предприятиях"					
+					> 
+					<img id="h_5_3" src="none" width="70" height="70"
+					title="Создание систем микропроцессорного управления"
+					> 
+					<img id="h_5_4" src="none" width="70" height="70" 
+					title="Создание систем автоматизации производственных процессов"
+					> 
+				</details>
+			</div>	
+			<div title="Интересные дополнительные 
+			предложения" class="andere">
+				<details><summary>Блог</summary>
+					4 предложения<br>
+					<img id="h_6_1" src="none" width="70" height="70"	title="Электроустановки"
+					onclick="this.src=path_face(sel_abit('h_6_1'));" 
+					> 
+					<img id="h_6_2" src="none" width="70" height="70"
+title="Автоматизация среды обитания"
+					 > 
+					<img id="h_6_3" src="none" width="70" height="70"
+					title="Автоматизация теплиц и приусадебного участка"
+					> 
+					<img id="h_6_4" src="none" width="70" height="70" 
+					title="Для детского творчества"
+					> 
+				</details>
+			</div>									
+		</div>	
+	
+	</div>
+	
+	<div class="panel">
+		НАСТРОЙКИ
+		
+		<form id="menu_left">
+			<fieldset class="sopr_form">
+				<legend><b>Цвет</b></legend>
+				<input id=btn_color type="color" value="#ffffff" >
+				<input type="button" onclick="set_color()"
+					value="Текст"><br>					
+				<input id=btn_back type="color" value="#5b227f">
+				<input type="button" onclick="set_back()"
+					value="Фон"><br>
+				<p></p>
+				<input type="button" onclick="set_restore()"
+					value="Восстановить  "><br>
+				
+			</fieldset>
+			<p></p>
+		<form method="post" target="/zakaz"> 
+			<fieldset class="sopr_form">
+				<legend><b>Заказ</b></legend>
+				<fieldset class="sopr_form">
+					<legend><b>Звонок</b></legend>
+						<input type="tel" name="num_fone" size="10">
+				</fieldset>
+				<fieldset class="sopr_form">
+					<legend><b>E-mail</b></legend>	
+						<input type="email" name="email" size="10">		
+				</fieldset>
+
+					<input type="submit" name="btn_submit" value="Заказать">			
+				</fieldset>
+		</form>
+<!-- 			<fieldset class="sopr_form">
+				<legend><b>Стиль</b></legend>
+					<label for="css0">Основной стиль</label>
+					<input type="checkbox" id="check_css0" checked="true" >
+					<br>
+					<label for="css1">Большой шрифт </label>
+					<input type="checkbox" id="check_css1">
+					<br>
+					<label for="css2"> Высокий контраст</label>
+					<input type="checkbox" id="check_css2">
+					<br>
+					<label for="css3">Рубленый шрифт </label>
+					<input type="checkbox" id="check_css3">
+					<br>
+					<p></p>
+					<input type="button" onclick="done_css()"
+						value="Применить "><br>
+			</fieldset> -->
+			<p></p>
+		
+		</form>
+		<p></p>
+		<audio id="aud" loop	src="cry/drin0_org.ogg">
+		</audio>
+	</div>
+	<div id="content" class="content"> <!-- scrolled -->
+		<p></p>
+		НАШИ ТЕЛЕФОНЫ: +7(343)246-12-50 +7(343)246-12-51 <br>
+		<p></p>
+		<iframe id="frame_content" class="fade sopr" src="htm/start00.htm" width="99%" height="480" > 
+
+		</iframe>
+			<br>		
+		<div >
+			<fieldset class="sopr_form" >
+				<legend><b>Навигация</b></legend>
+					<input type="button" onclick="goto(1)"
+						value="Назад  ">
+					<input type="button" onclick="goto(2)"
+						value="Вперед ">
+			</fieldset>
+
+		</div>	
+<!--		<img id="image_f" src="none" height="480"
+		class="scrolled"  alt="">		
+-->		<p></p>		
+	</div>
+
+ 	<div class="menu">
+		МЕНЮ
+		<menu type="list" title="руководство">
+			<li title="на совсем"> выход </li>
+			<br/>...........
+			<li title="программы"> настройки </li>
+			<br/>...........
+			<li title="биржа"> преподаватели  </li>
+			<br/>...........
+			<li title="зачисление"> абитуриенты</li>			
+			<br/>...........
+			<li title="в тренинге" onclick="leto()"> шаг</li>			
+			<br/>...........
+
+		</menu>
+	</div>
+	<div class="footer">
+		СООБЩЕСТВО
+		<div  class="andere griline">
+			<div title="Наши телефоны и адреса">
+				<details><summary>Контакты</summary>
+					4 места<br>
+					<img id="foot_about_1" title="История"
+						src="img/face.jpg" width="70" height="70" 
+						onclick="about(0)"> 
+					<img id="foot_about_2" title="Награды"
+						src="img/face.jpg" width="70" height="70" 
+						onclick="about(1)"> 
+					<p></p>
+					<img src="img/face.jpg" width="70" height="70" > 
+					<img src="img/face.jpg" width="70" height="70" > 
+					<p></p>
+				</details>
+			</div>
+			<div title="Информация о нашей организации">
+				<details><summary>О нас</summary>
+					4 страницы
+					<img id="foot_about_1" title="Лицензии"
+						src="pdfs/mchs.jpg" width="70" height="70" 
+						onclick="about(0)"> 
+					<img id="foot_about_2" title="Награды"
+						src="pdfs/page3.jpg" width="70" height="70" 
+						onclick="about(1)"> 
+					<p></p>
+					<img id="foot_about_1" title="Сотрудники"
+						src="pdfs/page5.jpg" width="70" height="70" 
+						onclick="about(2)"> 
+					<img id="foot_about_2" title="Достижения"
+						src="img/kubok.jpg" width="70" height="70" 
+						onclick="about(3)"> 
+					<p></p>
+
+				</details>
+			</div>
+			<div title="колледж">
+				<details><summary>Заказчики</summary>
+					4 места
+				</details>
+			</div>	
+			<div title="институт">
+				<details><summary>Поставщики</summary>
+					4 места
+				</details>
+			</div>
+			<div title="институт">
+				<details><summary>Партнеры</summary>
+					4 места
+				</details>
+			</div>	
+			<div title="аспирантура">
+				<details><summary>Разработка</summary>
+					4 места
+				</details>
+			</div>									
+		</div>	
+
+	</div>
+</div>
+<script src="src/base.js" type="text/javascript">
+</script>	
+</body>
+</html>

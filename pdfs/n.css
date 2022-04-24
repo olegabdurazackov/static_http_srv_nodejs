@@ -1,0 +1,69 @@
+
+body {
+	background-color: #fec;
+	margin: 2em;
+}
+.seealso {
+	background-color: yellow;	
+	color: #440;
+	padding:2em; 
+	-ms-border-radius: 2em;
+	-o-border-radius: 2em;
+	-moz-border-radius: 2em;
+	-webkit-border-radius: 2em;
+	border-radius: 2em;
+}
+.seealso a{
+	text-decoration: none;
+	color: #440; 
+}
+.seealso p{
+	margin-top: -1em;
+	padding-left: 2em;
+}
+.seealso h4{
+	padding-left: -2em;
+}
+.move  {
+	-khtml-border-radius: 3px; /* Konqueror */
+	-rim-border-radius: 3px; /* RIM */
+	-ms-border-radius: 3px; /* Microsoft */
+	-o-border-radius: 3px; /* Opera */
+	-moz-border-radius: 3px; /* Mozilla (например, Firefox) */
+	-webkit-border-radius: 3px; /* Webkit (например, Safari и Chrome) */
+	border-radius: 3px; /* W3C */
+	
+	/*transform: scale(1.1);*/
+	box-shadow: 5px 5px 5px hsla(0, 0%, 26.6667%, 0.8);
+	width: 100%;
+}
+
+.move img:active {
+	transform: scale(1.5);
+	box-shadow: 10px 10px 5px hsla(0, 0%, 26.6667%, 0.8);
+}
+* {
+transition: all 1s;
+}
+
+h3 {
+	color: #884;
+	text-shadow: 1px 2px 1px #000;
+	font-family: arial;
+	font-size: 1.5em;
+}
+h2  {
+	color: #884;
+	text-shadow: 2px 3px 2px #000;
+	font-family: arial;
+	font-size: 2em;
+}
+p {
+	font-family: serif;
+}
+p.podpis{
+	text-align: right;
+	text-transform: capitalize;
+	font-style: italic;
+}
+
